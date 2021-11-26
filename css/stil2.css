@@ -1,0 +1,181 @@
+@media all and (min-width:1200px){
+    body{
+        background-image: linear-gradient(40deg,rgb(230, 150, 150),rgb(253, 235, 235));
+    }
+}
+
+#vrh {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: lightcoral; */
+    background-image: linear-gradient(40deg,rgb(247, 175, 175),rgb(236, 189, 189));
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: x-large;
+    align-items: center;
+
+}
+
+#glavni{
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+#meni :hover{
+    font-size: x-large;
+}
+
+a{
+    color:rgb(39, 34, 34);
+}
+
+#sredina{
+    font-style: bold;
+    justify-items: center;
+    margin-left: 40px;
+}
+
+input {
+    justify-items: center;
+}
+
+img{
+    /* width: 70%;
+    height: 70%; */
+    size: 70%;
+}
+
+#meni{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    align-items: center;
+    background-color: lightcoral;
+    height: 50px;
+}
+
+#levo{
+    background-image: url("../slike/dzem1.jpg"),url("../slike/palacinka26.jpg");
+    background-repeat: no-repeat;
+    width: 500px;
+}
+
+#desno{
+    background-image: url("../slike/palacinka21.jpg"), url("../slike/cokoladna2.jpg");
+    width: 500px;
+    background-repeat:no-repeat ;
+}
+
+button{
+    margin: 30px;
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+}
+
+#forma{
+    margin-top: 20px;
+}
+
+#forma input{
+    display: flex;
+    flex-direction: column;
+}
+
+@media all and (max-width: 500px){
+    #desno{
+        width: 120px;
+    }
+    #levo{
+        width: 120px;
+    }
+
+    #sredina{
+        width: 200px;
+    }
+
+    #meni{
+        font-size: medium;
+        justify-content: space-around;
+        width: 500px;
+    }
+
+    #vrh{
+        width: 500px;
+    }
+
+    body{
+        width: 500px;
+        background-color:rgb(236, 195, 195) ;
+    }
+}
+
+@media all and (max-width: 1000px){
+    body{
+        width: 1000px;
+        background-color:rgb(236, 195, 195) ;
+
+    }
+    
+    #meni{
+        font-size: medium;
+        justify-content: space-around;
+        width: 1000px;
+    }
+
+    #vrh{
+        width: 1000px;
+    }
+
+    #desno{
+        width: 300px;
+    }
+    #levo{
+        width: 350px;
+    }
+
+    #sredina{
+        width: 300px;
+    }
+}
+
+@media all and (min-width: 1200px) and(max-width: 1200px){
+    body{
+        width: 1000px;
+        background-color:rgb(236, 195, 195) ;
+
+    }
+    
+    #meni{
+        font-size: larger;
+        justify-content: space-around;
+        width: 1000px;
+    }
+
+    #vrh{
+        width: 1000px;
+    }
+
+    #desno{
+        width: 300px;
+    }
+    #levo{
+        width: 300px;
+    }
+
+    #sredina{
+        width: 380px;
+        font-size: xx-large;
+    }
+
+    button{
+        margin: 30px;
+        width: 300px;
+        height: 100px;
+        font-weight: bold;
+        font-size: xx-large;
+
+    }
+}
