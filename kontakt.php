@@ -12,10 +12,10 @@
         <img src="slike/palacinke.png" height="80" width="80" >
     </div>
     <div id="meni">
-        <a href="stranica1.html">Naslovna</a>
-        <a href="stranica2.html">Napravi svoju palacinku</a>
-        <a href="stranica3.html">Poruci gotove proizvode</a>
-        <a href="stranica4.html">Kontakt</a>
+            <a href="?pocetna">Naslovna</a>
+            <a href="?naruci">Poruci gotove palačinke</a>
+            <a href="?kontakt">Kontakt</a>
+            <a href="?korpa">Korpa</a>
     </div>
     <div id="glavni">
         <div> 
