@@ -58,10 +58,17 @@
         )
         );
 
+        require "dbBroker.php";
+        require "model/korisnik.php";
 
 session_start();
 if(!isset($_SESSION['korpa'])){
     $_SESSION['korpa'] = array();
+}
+
+if(!isset($_SESSION['korisnik'])){
+    $_SESSION['korisnik'] = new Korisnik();
+
 }
 
 
@@ -77,6 +84,25 @@ if(isset($_POST['submit']) && $_POST['submit']=='Isprazni'){
     exit();
 }
 
+if(isset($_POST['username']) && isset($_POST['password'])){
+    $uname = $_POST['username'];
+    $upass = $_POST['password'];
+
+    $odgovor = Korisnik::logIn($uname,$upass,$conn);
+
+    if($odgovor->num_rows == 1){
+        $row = $odgovor->fetch_assoc();
+        $_SESSION['korisnik']->id =  $row["id"];
+        $_SESSION['korisnik']->ime =  $row["ime"];
+        $_SESSION['korisnik']->prezime =  $row["prezime"];
+        header('Location: ?korpa');
+        exit();
+    }else{
+        echo '<script>alert("Greska")</script>';
+        header('Location: ?log');
+        exit();
+    }
+}
 
 
 if(isset($_GET["naruci"])){
@@ -102,6 +128,11 @@ if(isset($_GET["korpa"])){
     include "korpa.php";
     exit();
 }
+if(isset($_GET["log"])){
+    include "log.php";
+    exit();
+}
+
 
 include "pocetna.php";
 

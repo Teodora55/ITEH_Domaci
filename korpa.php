@@ -18,7 +18,13 @@
             <a href="?naruci">Poruci gotove palačinke</a>
             <a href="?kontakt">Kontakt</a>
             <a href="?korpa">Korpa</a>
+            <a href="?log">Korisnik</a>
     </div>
+    <h1>
+    <?php  if($_SESSION['korisnik']->ime != null){ 
+        $ime = $_SESSION['korisnik']->ime;
+        echo "Dobrodosao $ime"; 
+        } ?></h1>
 <table border="1">
         <thead>
         <tr>

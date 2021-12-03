@@ -17,6 +17,7 @@
             <a href="?naruci">Poruci gotove palačinke</a>
             <a href="?kontakt">Kontakt</a>
             <a href="?korpa">Korpa</a>
+            <a href="?log">Korisnik</a>
     </div>
     <div id="glavni">
         <div id="tekst">
