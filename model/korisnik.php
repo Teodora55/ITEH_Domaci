@@ -9,6 +9,9 @@ class Korisnik{
     public $email;
     public $brojtelefona;
 
+
+    
+
     public function __construct($id=null, $username=null, $password=null, $ime=null, $prezime=null, $email=null, $brojtelefona=null){
         $this->id = $id;
         $this->username = $username;
@@ -23,6 +26,13 @@ class Korisnik{
         $query = "select * from korisnik where username='$username' and password='$password'";
         return $conn->query($query);
     }
+
+    public static function add(Korisnik $korisnik,mysqli $conn){
+        $query = "insert into korisnik(username, password, ime, prezime, email, brojtelefona) values('$korisnik->username',
+       ' $korisnik->password','$korisnik->ime','$korisnik->prezime','$korisnik->email','$korisnik->brojtelefona')";
+        return $conn->query($query);
+    }
+
 }
 
 ?>

@@ -63,9 +63,35 @@
     </table>
     <form action="" method="post">
         <p>
-          <a href="?">Nastavi sa kupovinom</a>
+          <a href="?naruci">Nastavi sa kupovinom</a>
           <input type="submit" name="submit" value="Isprazni">
+          <input type="submit" name="submit" value="Naruci">
         </p>
     </form>
+    <br>
+    <h2>Prothodne narudzbine</h2>
+    <table id="prethodneNarudzbine" class="table table-hover table-striped" border="1">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col">Palacinka</th>
+                        <th scope="col">Kolicina</th>
+                        <th scope="col">Datum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($_SESSION['prethodnaNarudzbine'] as $red):
+                    ?>
+                        <tr>
+                            <td><?php echo $red->palacinka ?></td>
+                            <td><?php echo $red->kolicina ?></td>
+                            <td><?php echo $red->datum ?></td>
+                        </tr>
+                <?php
+                    endforeach;
+                ?>
+
+                </tbody>
+            </table>
 </body>
 </html>

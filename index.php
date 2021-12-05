@@ -60,6 +60,7 @@
 
         require "dbBroker.php";
         require "model/korisnik.php";
+        require "model/narudzbina.php";
 
 session_start();
 if(!isset($_SESSION['korpa'])){
@@ -82,6 +83,41 @@ if(isset($_POST['submit']) && $_POST['submit']=='Isprazni'){
     $_SESSION['korpa']=array();
     header('location: ?korpa');
     exit();
+}
+
+if(isset($_POST['submit']) && $_POST['submit']=='Naruci'){
+    if( $_SESSION['korisnik']->id == null){
+        echo '<script>alert("Morate se prvo prijaviti")</script>';
+        header('location: ?log');
+        exit();
+    }else{
+        $korpa = array();
+        foreach($_SESSION['korpa'] as $id){
+           
+            foreach($palacinke as $pl){
+                if($pl['id'] == $id){
+                    $n = new Narudzbina($pl['naziv'],1,$_SESSION['korisnik']->id,date("m.d.y"));
+                    $postoji = false;
+                    foreach ($korpa as $k) {
+                        if($k->palacinka == $n->palacinka){
+                            $k->kolicina +=1;
+                            $postoji = true;
+                            break;
+                        }
+                    }
+                    if(!$postoji){
+                        $korpa[] = $n;
+                    }
+                }
+            }      
+    }
+    foreach ($korpa as $k) {
+        Narudzbina::add($k,$conn);
+    }
+        $_SESSION['korpa']=array();
+        //header('location: ?pocetna');
+        //exit();
+    }
 }
 
 if(isset($_POST['username']) && isset($_POST['password'])){
@@ -107,7 +143,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 
 if(isset($_GET["naruci"])){
     include "naruci.php";
-    exit();
+   // exit();
 }
 if(isset($_GET["kontakt"])){
     include "kontakt.php";
@@ -125,6 +161,11 @@ if(isset($_GET["korpa"])){
                 }
             }      
     }
+
+    if($_SESSION['korisnik']->id != null){
+        $_SESSION['prethodnaNarudzbine'] = Narudzbina::getByIdKorisnika($_SESSION['korisnik']->id,$conn);
+    }
+
     include "korpa.php";
     exit();
 }

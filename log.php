@@ -28,10 +28,36 @@
                     <br><br>
                     <label for="password">Lozinka</label>
                     <input type="password" name="password" class="form-control" required>
-                    <br>
+                    <br><br>
                     <button type="submit" class="btn btn-primary" name="submit">Prijavi se</button>
                 </div>
             </form>
+
+            <br><br><br><br><br><br><br>
+            <form method="POST" action="#">
+                <div class="container">
+                    <label class="ime">Ime</label>
+                    <input type="text" name="ime" class="form-control"  required>
+                    <br><br>
+                    <label for="prezime">Prezime</label>
+                    <input type="text" name="prezime" class="form-control" required>
+                    <br><br>
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" class="form-control" required>
+                    <br><br>
+                    <label for="brojtelefona">Broj telefona</label>
+                    <input type="text" name="brojtelefona" class="form-control" required>
+                    <br><br>
+                    <label for="username">Korisnicko ime</label>
+                    <input type="text" name="username" class="form-control" required>
+                    <br><br>
+                    <label for="password">Lozinka</label>
+                    <input type="password" name="password" class="form-control" required>
+                    <br><br>
+                    <button type="submit" class="btn btn-primary" name="submit">Kreiraj nalog</button>
+                </div>
+            </form>
+
         </div>
     </div>
 </body>
